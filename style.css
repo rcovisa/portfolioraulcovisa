@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(255, 107, 61);
+}
+
+
+
+.tarjeta {
+    background-color: #f6f8eb; /* Fondo blanco de la tarjeta */
+    padding: 40px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+    max-width: 500px; /* Ancho máximo de la tarjeta */
+    margin: 20px; /* Margen para separar la tarjeta de los bordes */
+    height: 400px;
+    width: 300px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px; /* Espacio entre el título y el botón */
+    color: rgb(255, 107, 61);
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0b0c0c; /* Color azul del botón */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.boton:hover {
+    background-color: #ff6b3d; /* Color azul más oscuro al pasar el ratón */
+}
+
+/* ... (resto del CSS) */
+
+/* ... (resto del CSS) */
+
+.ruleta-spinner {
+    width: 40px; /* Tamaño más pequeño */
+    height: 40px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #000 0deg 90deg, /* Quesito negro */
+        #ff6b3d 90deg 180deg, /* Quesito naranja */
+        #000 180deg 270deg, /* Otro quesito negro */
+        #ff6b3d 270deg 360deg
+       
+         /* Otro quesito naranja */
+        
+    );
+    animation: girar 2.5s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

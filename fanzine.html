@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título del Proyecto</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+ /* Estilos para el menú */
+ .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .menu a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+        .back-arrow {
+            font-size: 18px; /* Tamaño de la flecha */
+        }
+
+        .container {
+            display: flex;
+            gap: 800px;
+        }
+        .thumbnails-container {
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .thumbnail {
+            width:200px;
+            height: 200px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .main-content {
+            flex: 1;
+            max-width: 800px;
+            
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+        .description {
+            text-align: justify;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            display: block;
+            margin: 0 auto;
+            box-shadow: none;
+            border-radius: 8px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+   
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .thumbnails-container {
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+
+   
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <a href="#" class="back-arrow">&larr; Volver atrás</a>
+        <div>
+          <a href="./index.html">Menú Principal</a>
+        
+       </div>
+    </div>
+
+    <div class="container">
+        <div class="thumbnails-container">
+            <div class="thumbnail" onclick="openLightbox('./fotos/portadafanzine .jpg')">
+                <img src="./fotos/portadafanzine .jpg" alt="Miniatura 1">
+            </div>
+            <div class="thumbnail" onclick="openLightbox('./fotos/pagina.jpg')">
+                <img src="./fotos/pagina.jpg" alt="Miniatura 2">
+            </div>
+            <div class="thumbnail" onclick="openLightbox('./fotos/pagina2.jpg')">
+                <img src="./fotos/pagina2.jpg" alt="Miniatura 3">
+            </div>
+        </div>
+
+        <div class="main-content">
+            <h1>Fanzine True Crime</h1>
+            <div class="description">
+                <p>Con este proyecto personal quise indagar un poco más en algo que me gusta mucho. Todo lo que tiene que ver con la novela negra y la psicopatía es un tema sobre el que me encanta leer y buscando información entre libros quise dar forma a esta pequeña publicación digital que se puede descargar gratis.</p>
+                <p>Para hacer el diseño de las paginas utilice el collage, que es uno de los terrenos en los que más cómodo me siento, las huellas de la portada son mis manos. </p>
+                <p>La tipografía utilizada ha sido la de Altivo en tres pesos diferentes.</p>
+
+
+                <div class="download-container">
+                    <a href="https://www.behance.net/asset/530753/En-la-mente-del-asesino?tracking_source=project_page" target="_blank" class="download-button">Descargar</a>
+                </div>
+             </div>
+            </div>
+            <!-- ... (resto del contenido) ... -->
+        </div>
+    </div>
+
+    <div id="myLightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightboxImage" src="" alt="Imagen en grande">
+    </div>
+
+    <script>
+        function openLightbox(imagePath) {
+            document.getElementById('lightboxImage').src = imagePath;
+            document.getElementById('myLightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('myLightbox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
